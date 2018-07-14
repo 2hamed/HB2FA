@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">HBF2A</string>
+
+    <integer name="distribution_type">0</integer>
+</resources>

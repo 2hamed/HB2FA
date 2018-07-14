@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:deema="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:context=".BannerActivity">
+
+        <Button
+            android:id="@+id/btn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Load Banner 300x250" />
+
+        <com.deema.adcontainer.BannerContainer
+            android:id="@+id/banner1"
+            android:layout_width="300dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="25dp"
+            deema:adContainerId="69"
+            deema:banner_height="250dp"
+            deema:banner_width="300dp"
+            deema:refreshTime="20" />
+
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Load Banner 320x50" />
+
+        <com.deema.adcontainer.BannerContainer
+            android:id="@+id/banner2"
+            android:layout_width="320dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="25dp"
+            deema:adContainerId="70"
+            deema:banner_height="50dp"
+            deema:banner_width="320dp"
+            deema:refreshTime="20" />
+
+        <Button
+            android:id="@+id/btn3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Load Banner 728x90" />
+
+        <com.deema.adcontainer.BannerContainer
+            android:id="@+id/banner3"
+            android:layout_width="728dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="25dp"
+            deema:adContainerId="71"
+            deema:banner_height="90dp"
+            deema:banner_width="728dp"
+            deema:refreshTime="20" />
+
+        <Button
+            android:id="@+id/btn4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Load Banner 320x100" />
+
+        <com.deema.adcontainer.BannerContainer
+            android:id="@+id/banner4"
+            android:layout_width="320dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="25dp"
+            deema:adContainerId="72"
+            deema:banner_height="100dp"
+            deema:banner_width="320dp"
+            deema:refreshTime="20" />
+
+        <Button
+            android:id="@+id/btn5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Load Banner 468x60" />
+
+        <com.deema.adcontainer.BannerContainer
+            android:id="@+id/banner5"
+            android:layout_width="468dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="25dp"
+            deema:adContainerId="73"
+            deema:banner_height="60dp"
+            deema:banner_width="468dp"
+            deema:refreshTime="20" />
+    </LinearLayout>
+</ScrollView>
