@@ -4,9 +4,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.deema.adcontainer.BannerContainer;
 import com.deema.adcontainer.listener.BannerOnLoadListener;
+import com.deema.adcontainer.listener.OnCacheListener;
 
 public class BannerActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "BannerActivity";
@@ -44,7 +46,12 @@ public class BannerActivity extends AppCompatActivity implements View.OnClickLis
                     @Override
                     public void onSuccess() {
                         Log.d(TAG, "onSuccess: Banner 1");
-                        banner1.showAd(null);
+                        banner1.showAd(new OnCacheListener() {
+                            @Override
+                            public void noAdCache() {
+                                Toast.makeText(BannerActivity.this, "No Banner available!", Toast.LENGTH_SHORT).show();
+                            }
+                        });
                     }
 
                     @Override
@@ -58,7 +65,12 @@ public class BannerActivity extends AppCompatActivity implements View.OnClickLis
                     @Override
                     public void onSuccess() {
                         Log.d(TAG, "onSuccess: Banner 2");
-                        banner2.showAd(null);
+                        banner2.showAd(new OnCacheListener() {
+                            @Override
+                            public void noAdCache() {
+                                Toast.makeText(BannerActivity.this, "No Banner available!", Toast.LENGTH_SHORT).show();
+                            }
+                        });
                     }
 
                     @Override
@@ -72,7 +84,12 @@ public class BannerActivity extends AppCompatActivity implements View.OnClickLis
                     @Override
                     public void onSuccess() {
                         Log.d(TAG, "onSuccess: Banner 3");
-                        banner3.showAd(null);
+                        banner3.showAd(new OnCacheListener() {
+                            @Override
+                            public void noAdCache() {
+                                Toast.makeText(BannerActivity.this, "No Banner available!", Toast.LENGTH_SHORT).show();
+                            }
+                        });
                     }
 
                     @Override
@@ -86,7 +103,12 @@ public class BannerActivity extends AppCompatActivity implements View.OnClickLis
                     @Override
                     public void onSuccess() {
                         Log.d(TAG, "onSuccess: Banner 4");
-                        banner4.showAd(null);
+                        banner4.showAd(new OnCacheListener() {
+                            @Override
+                            public void noAdCache() {
+                                Toast.makeText(BannerActivity.this, "No Banner available!", Toast.LENGTH_SHORT).show();
+                            }
+                        });
                     }
 
                     @Override
@@ -100,7 +122,12 @@ public class BannerActivity extends AppCompatActivity implements View.OnClickLis
                     @Override
                     public void onSuccess() {
                         Log.d(TAG, "onSuccess: Banner 5");
-                        banner5.showAd(null);
+                        banner5.showAd(new OnCacheListener() {
+                            @Override
+                            public void noAdCache() {
+                                Toast.makeText(BannerActivity.this, "No Banner available!", Toast.LENGTH_SHORT).show();
+                            }
+                        });
                     }
 
                     @Override
