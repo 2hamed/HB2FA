@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.deema.adcontainer.InterstitialAdContainer;
+import com.deema.adcontainer.RewardedVideoContainer;
 import com.deema.adcontainer.VideoContainer;
 import com.deema.adcontainer.listener.InterstitialListener;
 import com.deema.adcontainer.listener.OnCacheListener;
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     InterstitialAdContainer preCachedIntersAd;
 
     VideoContainer videoContainer;
+    private RewardedVideoContainer rewardedVideoContainer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,6 +91,42 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, "No Video Ad in Cache!", Toast.LENGTH_SHORT).show();
                     }
                 });
+            }
+        });
+
+
+        rewardedVideoContainer = new RewardedVideoContainer(this, "78", "My_Reward", 300);
+        rewardedVideoContainer.loadAd(new InterstitialListener() {
+            @Override
+            public void onSuccess() {
+                Log.e(TAG, "Rewarded Ad loaded");
+            }
+
+            @Override
+            public void onFailure(Exception e) {
+                Log.e(TAG, "Cannot load rewarded interstitial, reason: " + e.getMessage());
+            }
+
+            @Override
+            public void closed() {
+                Log.d(TAG, "Rewarded closed");
+            }
+        });
+
+
+        findViewById(R.id.rewardedBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (rewardedVideoContainer.isLoaded()) {
+                    rewardedVideoContainer.showAd(new OnCacheListener() {
+                        @Override
+                        public void noAdCache() {
+                            Toast.makeText(MainActivity.this, "No Rewarded Video Ad in Cache!", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                } else {
+                    Toast.makeText(MainActivity.this, "Not yet loaded", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
